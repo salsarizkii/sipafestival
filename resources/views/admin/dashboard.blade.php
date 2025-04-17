@@ -34,76 +34,57 @@
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-              <span class="fs-4 m-3"><img src="/images/logosipafestival2025.png" alt="sipafestival2025" width="100" height="75"></span>
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary m-3" style="width: 280px;">
+            <a href="/" class="justify-content-center">
+              <img src="/images/logosipafestival2025.png" alt="sipafestival2025" width="100" height="75" class="mx-5">
             </a>
             <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
+            <ul class="nav nav-pills flex-column mb-auto ms-3">
               <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a href="#" class="nav-link active rounded-4" aria-current="page">
                   <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#home"/></svg>
-                  Home
+                  Seluruh Aduan
                 </a>
               </li>
               <li>
                 <a href="#" class="nav-link link-body-emphasis">
                   <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#speedometer2"/></svg>
-                  Dashboard
+                  Belum dibaca
                 </a>
               </li>
               <li>
                 <a href="#" class="nav-link link-body-emphasis">
                   <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#table"/></svg>
-                  Orders
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                  <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#grid"/></svg>
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#" class="nav-link link-body-emphasis">
-                  <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#people-circle"/></svg>
-                  Customers
+                  Sudah dibaca
                 </a>
               </li>
             </ul>
-            <hr>
-            <div class="dropdown">
-              <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>mdo</strong>
-              </a>
-              <ul class="dropdown-menu text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-              </ul>
-            </div>
+            <p class="nav nav-pills flex-column mb-auto ms-3">Account Page</p>
+            <ul class="nav nav-pills flex-column mb-auto ms-3">
+                <a href="#" class="nav-link link-body-emphasis">
+                  <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true"><use xlink:href="#grid"/></svg>
+                  Log Out
+                </a>
+            </ul>
           </div>
         <!-- Main Content -->
         <div class="content flex-grow-1">
             <h1 class="m-5 text-5xl text-black fw-bold">Hi, Helmi Rafik!</h1>
-            <div class="card m-5 rounded-5">
-                <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card m-3 rounded-4 bg-white border-white shadow">
+                <div class="card-header d-flex rounded-4 bg-white justify-content-between align-items-center">
                     <span>DAFTAR ADUAN</span>
-                    <div class="search-bar">
-                        <input type="text" class="form-control" placeholder="SEARCH">
-                        <i class="fas fa-search"></i>
-                    </div>
+                    <form class="d-flex rounded-4" role="search">
+                        <input class="form-control me-2 rounded-5" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success rounded-5" type="submit">Search</button>
+                      </form>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Aduan</th>
-                            <th scope="col">Status</th>
+                            <th scope="col-2">Aduan</th>
+                            <th scope="col-4">Status</th>
                           </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -111,19 +92,16 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>@mdo</td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
-                            <td>@fat</td>
                           </tr>
                           <tr>
                             <th scope="row">3</th>
                             <td>John</td>
                             <td>Doe</td>
-                            <td>@social</td>
                           </tr>
                         </tbody>
                       </table>
