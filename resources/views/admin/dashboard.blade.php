@@ -22,20 +22,6 @@
         .border-icon{
             border-radius: 35%;
         }
-        .content .search-bar {
-            position: relative;
-        }
-        .content .search-bar input {
-            border-radius: 20px;
-            padding-right: 40px;
-        }
-        .content .search-bar .fa-search {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6c757d;
-        }
     </style>
 </head>
 <body>
@@ -48,13 +34,13 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto ms-3">
               <li class="nav-item">
-                <a href="#" class="align-items-center d-flex nav-link active rounded-4" aria-current="page">
+                <a href="#" class="align-items-center d-flex nav-link rounded-4 bg-white shadow-sm px-3 py-2 active link-body-emphasis" aria-current="page">
                     <div class="border-icon p-2 bg-purple-sipa text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="text-white" viewBox="0 0 384 512">
                             <path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/>
                           </svg>             
                     </div>
-                  <span class="ms-2">
+                  <span class="ms-2 text-dark">
                     Seluruh Aduan
                   </span>
                 </a>
@@ -164,6 +150,28 @@
             </div>
         </div>
     </div>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-pills .nav-link');
+      
+        navLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            navLinks.forEach(l => {
+              l.classList.remove('active', 'bg-white', 'shadow-sm', 'text-dark', 'fw-semibold');
+              const span = l.querySelector('span');
+              if (span) {
+                span.classList.remove('text-dark', 'fw-semibold');
+              }
+            });
+      
+            this.classList.add('active', 'bg-white', 'shadow-sm');
+            const span = this.querySelector('span');
+            if (span) {
+              span.classList.add('text-dark', 'fw-semibold');
+            }
+          });
+        });
+      </script>
+           
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
