@@ -1,5 +1,5 @@
 
-# 🚀 Instalasi Laravel 12 + XAMPP untuk teman teman lucuqu (pke gpt bikinnya)
+# 🚀 Instalasi Laravel 12 + XAMPP untuk teman teman lucuqu 
 
 Panduan ini menjelaskan langkah-langkah untuk menjalankan proyek Laravel 12 yang telah di-clone, serta menghubungkan ke database menggunakan XAMPP.
 
@@ -96,4 +96,4 @@ Aplikasi akan berjalan di: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 Laravel 12 sudah berhasil dijalankan dan terhubung ke database menggunakan XAMPP. Selamat ngoding! 😄
 
-
+- slamat ngoding fwennn -salsa-
