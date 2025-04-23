@@ -7,6 +7,9 @@ use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/lineup', function () {
+    return view('lineup');
+});
 
 Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru');

@@ -49,7 +49,13 @@
       z-index: -1;
       opacity: 0.4;
     }
-  </style>
+    .img-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 5s ease-in-out;
+    }
+</style>
 </head>
 <body>
 
@@ -64,11 +70,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active fw-bold" href="#">HOME</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">LINE UP</a></li>
+        <li class="nav-item"><a class="nav-link active fw-bold" href="/">HOME</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="#">NEWS</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="#">ABOUT US</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="#">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
       </ul>
     </div>
   </div>
@@ -98,10 +105,16 @@
 
     <div class="row mb-5 align-items-center">
       <div class="col-md-5">
-        <p>Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. Dengan mengangkat tema "Performing Royal Genesis" dan menjadikan Gusti Sura sebagai maskot, SIPA 2024 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.</p>
+        <p style="text-align: justify;">Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. Dengan mengangkat tema "Performing Royal Genesis" dan menjadikan Gusti Sura sebagai maskot, SIPA 2024 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.</p>
       </div>
       <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Multiple Stage">
+        <div id="slider" class="position-relative overflow-hidden rounded">
+          <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+          <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+          <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+          <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+          <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+        </div>
       </div>
     </div>
 
@@ -212,10 +225,21 @@
         <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
         <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
       </div>
-
     </div>
   </div>
 </footer>
+
+
+<script>
+  const slides = document.querySelectorAll('.img-slide');
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.add('d-none'); // Sembunyikan gambar sekarang
+    index = (index + 1) % slides.length;
+    slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
+  }, 3000);
+</script>
 
 
 </body>
