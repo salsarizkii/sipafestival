@@ -219,7 +219,7 @@
         </div>
       </div>
 
-      <!-- Kanan: Site by dan Copyright -->
+      <!-- Kanan: Site by dan copyright -->
       <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
         <small style="color: #b21e22;">SITE BY</small><br>
         <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
