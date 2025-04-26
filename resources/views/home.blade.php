@@ -28,7 +28,7 @@
       color: #B8141E !important;
     }
     .navbar-nav .nav-link.active {
-      color:#6f01af !important;
+      color:#B8141E !important;
     }
     .navbar-toggler {
       border: none;
@@ -49,11 +49,29 @@
       z-index: -1;
       opacity: 0.4;
     }
+    <style>
     .img-slide {
       position: absolute;
       top: 0;
       left: 0;
       transition: opacity 5s ease-in-out;
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+      z-index: 0;
+    }
+    .img-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    #slider {
+      width: 70%;
+      max-width: 600px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
     }
 </style>
 </head>
@@ -74,7 +92,7 @@
         <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="#">NEWS</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="#">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
       </ul>
     </div>
@@ -104,10 +122,15 @@
     <h4 class="text-center text-danger fw-medium mb-5">Let’s make new journey on SIPA</h4>
 
     <div class="row mb-5 align-items-center">
-      <div class="col-md-5">
-        <p style="text-align: justify;">Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. Dengan mengangkat tema "Performing Royal Genesis" dan menjadikan Gusti Sura sebagai maskot, SIPA 2024 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.</p>
-      </div>
       <div class="col-md-6">
+        <h4 class="text-danger fw-bold mb-3">Who We Are?</h4>
+          <p style="text-align: justify;">
+            Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
+            Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+          </p>
+        <a href="#" class="btn btn-danger mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+      </div>
+      <div class="col-md-6" style="content-align: center;">
         <div id="slider" class="position-relative overflow-hidden rounded">
           <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
           <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
@@ -229,7 +252,6 @@
   </div>
 </footer>
 
-
 <script>
   const slides = document.querySelectorAll('.img-slide');
   let index = 0;
@@ -240,7 +262,5 @@
     slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
   }, 3000);
 </script>
-
-
 </body>
 </html>

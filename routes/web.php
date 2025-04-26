@@ -10,6 +10,9 @@ Route::get('/', function () {
 Route::get('/lineup', function () {
     return view('lineup');
 });
+Route::get('/faq', function () {
+    return view('faq');
+});
 
 Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru');
