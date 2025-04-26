@@ -301,5 +301,6 @@
     slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
   }, 3000);
 </script>
+
 </body>
 </html>
