@@ -38,6 +38,7 @@
     }
     .header-section {
       position: relative;
+      overflow: hidden;
     }
     .header-section img.bg {
       position: absolute;
@@ -47,8 +48,45 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.4;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
     }
+    
+    .header-section .container {
+      width: 100%;
+      height: 700px;
+      padding: 0;
+    }
+    .header-section .container{
+      font-size: 25px;
+      color: #B8141E; 
+    }
+    .header-section img.text {
+      width: 100%;
+      height: 100%;
+      top: 50px;
+      left: 0;
+      position:relative;
+    }
+    .btn-findmore {
+      background-color: transparent; /* transparan */
+      color: #dc3545; /* warna teks merah, bisa disesuaikan */
+      border: 2px solid #dc3545; /* garis pinggir merah */
+      border-radius: 8px; /* sudut membulat */
+      font-size: 18px;
+      padding: 12px 24px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none; /* hapus underline */
+      display: inline-block;
+    }
+
+    .btn-findmore:hover {
+      background-color: #dc3545; /* saat hover, background jadi merah */
+      color: #ffffff;
+      border: 2px solid #ffffff;/* teks jadi putih saat hover */
+    }
+
     <style>
     .img-slide {
       position: absolute;
@@ -73,6 +111,10 @@
       position: relative;
       overflow: hidden;
     }
+    .welcome-container {
+      padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+    }
+
 </style>
 </head>
 <body>
@@ -101,22 +143,19 @@
 
 <!-- Header -->
 <section class="text-center py-5 header-section">
-  <img src="{{ asset('images/patern.png') }}" alt="Background" class="bg">
+  <img src="{{ asset('images/pattern/pattern12.png') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" class="img-fluid mb-3" style="max-height: 120px;">
-    <p class="text-danger fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
-    <div class="mt-3">
-      <a href="#" class="btn btn-primary me-2">TICKET</a>
-      <a href="#" class="btn btn-danger">LINE UP</a>
-    </div>
+    <img src="{{ asset('images/pattern/sipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
+    <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
+    <a href="#welcome-section" class="btn btn-danger btn-findmore mt-4 px-4 py-2 fw-bold">FIND MORE</a>
   </div>
 </section>
 
 
 
 <!-- SIPA Experience -->
-<section class="py-5">
-  <div class="container">
+<section class="py-5 welcome-section" id="welcome-section">
+  <div class="container welcome-container" id="welcome-section">
     <h3 class="text-center text-danger fw-bold">WELCOME TO SIPA!</h3>
     <h3 class="text-center text-danger fw-bold">PERFORMING ROYAL GENESIS</h3>
     <h4 class="text-center text-danger fw-medium mb-5">Let’s make new journey on SIPA</h4>
