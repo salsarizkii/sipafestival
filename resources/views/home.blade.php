@@ -38,6 +38,7 @@
     }
     .header-section {
       position: relative;
+      overflow: hidden;
     }
     .header-section img.bg {
       position: absolute;
@@ -79,6 +80,13 @@
       text-decoration: none; /* hapus underline */
       display: inline-block;
     }
+
+    .btn-findmore:hover {
+      background-color: #dc3545; /* saat hover, background jadi merah */
+      color: #ffffff;
+      border: 2px solid #ffffff;/* teks jadi putih saat hover */
+    }
+
     <style>
     .img-slide {
       position: absolute;
@@ -103,6 +111,10 @@
       position: relative;
       overflow: hidden;
     }
+    .welcome-container {
+      padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+    }
+
 </style>
 </head>
 <body>
