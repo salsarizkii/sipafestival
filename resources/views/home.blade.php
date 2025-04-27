@@ -49,12 +49,41 @@
       z-index: -1;
       opacity: 0.4;
     }
+
+    .btn-findmore:hover {
+      background-color: #dc3545; /* saat hover, background jadi merah */
+      color: #ffffff;
+      border: 2px solid #ffffff;/* teks jadi putih saat hover */
+    }
+
+    <style>
     .img-slide {
       position: absolute;
       top: 0;
       left: 0;
       transition: opacity 5s ease-in-out;
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+      z-index: 0;
     }
+    .img-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    #slider {
+      width: 70%;
+      max-width: 600px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    .welcome-container {
+      padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+    }
+
 </style>
 </head>
 <body>
