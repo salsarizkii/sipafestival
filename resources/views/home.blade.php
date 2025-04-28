@@ -156,15 +156,34 @@
         box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
       }
     }
+    .delegate-container {
+      position: relative;
+      overflow: hidden;
+    }
+
     .delegates-wrapper {
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding: 10px;
-      white-space: nowrap;
+      display: flex;
+      transition: transform 0.5s ease;
     }
 
     .delegate-item {
-      width: 220px; /* Lebar 1 item */
+      flex-shrink: 0;
+      width: 220px;
+      margin: 0 15px; /* Lebih konsisten daripada mx-3 */
+      text-align: center;
+    }
+
+    .delegate-item img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .delegate-item p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
     }
 
     .arrow-btn {
@@ -181,19 +200,72 @@
     }
 
     .arrow-btn.left {
-      left: 5px;
+      left: 10px;
     }
 
     .arrow-btn.right {
-      right: 5px;
+      right: 10px;
     }
 
     .arrow-btn i {
       font-size: 24px;
       color: #B8141E;
     }
+    .archive-section {
+      text-align: justify;
+    }
 
+    .section-title {
+      color: #991B1B; /* merah tua */
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
 
+    .content-box {
+      background-color: #FFF7D1; /* krem muda */
+      border: 2px solid #B8141E;
+      border-radius: 40px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 400px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 50px;
+    }
+
+    .responsive-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content-text {
+      color: #991B1B;
+      text-align: justify;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+      .image-container {
+        margin-bottom: 20px;
+      }
+    }
+    .map-frame {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 0.5rem; /* Rounded corner seperti Bootstrap rounded */
+    }
 </style>
 </head>
 <body>
@@ -260,17 +332,14 @@
 
     <div class="text-center mb-5">
       <h3 class="fw-bold" style="color: #B8141E;">On SIPA Last Year</h3>
-
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
           <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
-
           <div class="play-button position-absolute top-50 start-50 translate-middle">
             <span class="circle"></span>
             <i class="bi bi-play-fill"></i>
           </div>
         </div>
-
         <iframe id="videoIframe" width="1280" height="720"
                 src="https://www.youtube.com/embed/rJtSeMMQY9g"
                 title="YouTube video" frameborder="0"
@@ -279,27 +348,26 @@
       </div>
     </div>
 
-    <div class="delegates-section text-center my-5">
+    <div class="mb-5 text-center">
       <h3 class="fw-bold" style="color: #B8141E;">Delegates</h3>
+    </div>
 
-      <div class="position-relative" style="position: relative; overflow: hidden;">
-
-        <div id="delegatesContainer" class="delegates-wrapper d-flex">
+    <div class="delegates-section text-center my-5">
+      
+      <div class="delegate-container position-relative" style="overflow: hidden;">
+        <div id="delegatesContainer" class="delegates-wrapper">
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
             <p class="mt-2 fw-bold" style="font-size: 16px;">Denmark</p>
           </div>
-
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
             <p class="mt-2 fw-bold" style="font-size: 16px;">France</p>
           </div>
-
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
             <p class="mt-2 fw-bold" style="font-size: 16px;">Germany</p>
           </div>
-
           <div class="delegate-item text-center flex-shrink-0 mx-3">
             <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
             <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
@@ -329,28 +397,43 @@
             <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
           </div>
         </div>
+        <button class="arrow-btn left" onclick="scrollLeft()">
+          <i class="bi bi-chevron-left"></i>
+        </button>
 
         <button class="arrow-btn right" onclick="scrollRight()">
           <i class="bi bi-chevron-right"></i>
         </button>
-        <button class="arrow-btn left" onclick="scrollLeft()">
-          <i class="bi bi-chevron-left"></i>
-        </button>
+        
       </div>
     </div>
 
-
-
-
-    <div class="row mb-5 align-items-center flex-md-row-reverse">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">SUSTAINABILITY PROGRAM</h5>
-        <p>Sipafestival menekankan keberlanjutan lingkungan dengan sistem manajemen sampah yang baik agar limbah dikelola secara bertanggung jawab.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Sustainability Program">
-      </div>
+    <div class="mb-5 text-center">
+      <h2 class="section-title" style="text-center">ARCHIVE OF SIPA</h2>
     </div>
+
+    <section class="archive-section">
+      <div class="content-box">
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="SIPA Performance" class="responsive-image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="text-justify fw-bold" style="color: #B8141E;">Director’s Profile</h3>
+              <p class="content-text">
+                Solo International Performing Arts (SIPA) 2024 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
+                Digelar di Kota Solo, SIPA 2024 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
+                Dengan mengangkat tema "Performing Royal Genesis" dan menjadikan Gusti Sura sebagai maskot, SIPA 2024 berhasil menyoroti kekayaan budaya Jawa 
+                sekaligus menghadirkan nuansa modern.
+              </p>
+            <a href="#" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <div class="row mb-5 align-items-center">
       <div class="col-md-6">
@@ -359,16 +442,6 @@
       </div>
       <div class="col-md-6">
         <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
-      </div>
-    </div>
-
-    <div class="row mb-5 align-items-center flex-md-row-reverse">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">PASARAYA SIPA</h5>
-        <p>Marketplace kurasi dengan ragam kuliner dan produk kreatif lokal yang memperkaya pengalaman festival secara keseluruhan.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Pasaraya SIPA">
       </div>
     </div>
 
@@ -447,6 +520,68 @@
       </div>
     </div>
   </div>
+  <div class="container py-5">
+    <!-- Section Title -->
+    <div class="text-center mb-4">
+      <h5 class="text-danger fw-bold">We’d love to hear from you</h5>
+      <h5 class="fw-bold">@SIPAFESTIVAL</h5>
+    </div>
+
+    <!-- Location and Map -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-6">
+        <h6 class="text-danger fw-bold">LOCATION</h6>
+        <p class="fw-bold">Address</p>
+        <p>Jl. Kedasih No.22, <br>Kerten, Laweyan, Solo, Central Java, INA</p>
+      </div>
+      <div class="col-md-6">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.036946214386!2d110.8030478153319!3d-7.556823776742838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16928e142857%3A0x26507e3dc48d8705!2sJl.%20Kedasih%20No.22%2C%20Kerten%2C%20Laweyan%2C%20Surakarta%20City%2C%20Central%20Java%2057122%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1714294488071!5m2!1sen!2sid" 
+          class="map-frame" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Feedback and Volunteer Form -->
+    <div class="row mt-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <p>We value your feedback. Whether you have a question or a suggestion, we’re here for you 24/7. Feel free to call or email us anytime.</p>
+        <h6 class="text-danger fw-bold">Contact information</h6>
+        <p>000888-5556-7856<br>@sipafestival@gmail.com</p>
+        <p class="fw-bold">Address</p>
+        <p>Jl. Kedasih No.22,<br>Kerten, Laweyan, Solo, Central Java, INA</p>
+      </div>
+
+      <div class="col-md-6">
+        <div class="p-4 rounded border shadow-sm">
+          <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control border-danger" placeholder="Email">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control border-danger" placeholder="Name">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control border-danger" placeholder="Subject">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control border-danger" rows="4" placeholder="Message"></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-danger btn-sm px-4 rounded-pill">SEND THE FORM</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- Festival Info -->
@@ -527,21 +662,49 @@
   iframe.src = youtubeLink;
   iframe.style.display = 'block';
 }
+  let currentPosition = 0;
+  const container = document.getElementById('delegatesContainer');
+  const containerWrapper = container.parentElement;
+  const itemWidth = 250; // 220 + 2*15px margin
+
   function scrollLeft() {
-    const container = document.getElementById('delegatesContainer');
-    container.scrollBy({
-      left: -250, // geser ke kiri sekitar 1 gambar
-      behavior: 'smooth'
-    });
+    const maxScroll = 0;
+
+    currentPosition += itemWidth;
+    if (currentPosition > maxScroll) {
+      currentPosition = maxScroll;
+    }
+
+    container.style.transform = `translateX(${currentPosition}px)`;
   }
 
   function scrollRight() {
-    const container = document.getElementById('delegatesContainer');
-    container.scrollBy({
-      left: 250, // geser ke kanan sekitar 1 gambar
-      behavior: 'smooth'
-    });
+    const containerWidth = container.scrollWidth;
+    const wrapperWidth = containerWrapper.offsetWidth;
+    const maxScroll = wrapperWidth - containerWidth;
+
+    currentPosition -= itemWidth;
+    if (currentPosition < maxScroll) {
+      currentPosition = maxScroll;
+    }
+
+    container.style.transform = `translateX(${currentPosition}px)`;
   }
+
+  // AUTO SCROLL tiap 3 detik
+  setInterval(() => {
+    const containerWidth = container.scrollWidth;
+    const wrapperWidth = containerWrapper.offsetWidth;
+    const maxScroll = wrapperWidth - containerWidth;
+
+    currentPosition -= itemWidth;
+    if (currentPosition < maxScroll) {
+      currentPosition = 0; // kalau sudah mentok kanan, reset ke awal
+    }
+
+    container.style.transform = `translateX(${currentPosition}px)`;
+  }, 3000); // 3000 ms = 3 detik
+
 </script>
 </body>
 </html>
