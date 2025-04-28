@@ -70,21 +70,19 @@
     }
     .btn-findmore {
       background-color: transparent; /* transparan */
-      color: #dc3545; /* warna teks merah, bisa disesuaikan */
-      border: 2px solid #dc3545; /* garis pinggir merah */
+      color: #B8141E; /* warna teks merah, bisa disesuaikan */
+      border: 2px solid #B8141E; /* garis pinggir merah */
       border-radius: 8px; /* sudut membulat */
-      font-size: 18px;
+      font-size: 15px;
       padding: 12px 24px;
       font-weight: bold;
       transition: all 0.3s ease;
       text-decoration: none; /* hapus underline */
       display: inline-block;
     }
-
     .btn-findmore:hover {
-      background-color: #dc3545; /* saat hover, background jadi merah */
+      background-color: #B8141E; /* saat hover, background jadi merah */
       color: #ffffff;
-      border: 2px solid #ffffff;/* teks jadi putih saat hover */
     }
 
     <style>
@@ -114,6 +112,87 @@
     .welcome-container {
       padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
     }
+    .play-button {
+      width: 100px;
+      height: 100px;
+      background: #B8141E;
+      border: 2px solid #B8141E;
+      border-radius: 50%;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px #B8141E;
+      animation: pulse 2s infinite;
+    }
+
+    .play-button i {
+      font-size: 50px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .play-button:hover {
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(184, 20, 30, 0.5);
+      transform: scale(1.05);
+    }
+
+    .play-button:hover i {
+      color: #8d0f16;
+      
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(184, 20, 30, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(184, 20, 30, 0);
+      }
+    }
+    .delegates-wrapper {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    .delegate-item {
+      width: 220px; /* Lebar 1 item */
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow-btn.left {
+      left: 5px;
+    }
+
+    .arrow-btn.right {
+      right: 5px;
+    }
+
+    .arrow-btn i {
+      font-size: 24px;
+      color: #B8141E;
+    }
+
 
 </style>
 </head>
@@ -132,8 +211,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active fw-bold" href="/">HOME</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">NEWS</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="/aboutus">ABOUT US</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
       </ul>
@@ -147,7 +225,7 @@
   <div class="container">
     <img src="{{ asset('images/pattern/sipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
-    <a href="#welcome-section" class="btn btn-danger btn-findmore mt-4 px-4 py-2 fw-bold">FIND MORE</a>
+    <a href="#welcome-section" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND MORE</a>
   </div>
 </section>
 
@@ -156,18 +234,18 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-    <h3 class="text-center text-danger fw-bold">WELCOME TO SIPA!</h3>
-    <h3 class="text-center text-danger fw-bold">PERFORMING ROYAL GENESIS</h3>
-    <h4 class="text-center text-danger fw-medium mb-5">Let’s make new journey on SIPA</h4>
+    <h3 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h3>
+    <h3 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h3>
+    <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h4>
 
-    <div class="row mb-5 align-items-center">
+    <div class="row mb-5 align-items-justify">
       <div class="col-md-6">
-        <h4 class="text-danger fw-bold mb-3">Who We Are?</h4>
+        <h4 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h4>
           <p style="text-align: justify;">
             Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
             Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
           </p>
-        <a href="#" class="btn btn-danger mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+        <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
       </div>
       <div class="col-md-6" style="content-align: center;">
         <div id="slider" class="position-relative overflow-hidden rounded">
@@ -180,25 +258,89 @@
       </div>
     </div>
 
-    <div class="row mb-5 align-items-center flex-md-row-reverse">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">COMMISSION ARTIST</h5>
-        <p>Seniman terkurasi menghadirkan karya yang memperkuat identitas visual dan atmosfer unik dari Sipafestival, memberikan pengalaman artistik mendalam bagi para pengunjung.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Commission Artist">
+    <div class="text-center mb-5">
+      <h3 class="fw-bold" style="color: #B8141E;">On SIPA Last Year</h3>
+
+      <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
+        <div id="thumbnail" onclick="openVideo()" style="position: relative;">
+          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
+
+          <div class="play-button position-absolute top-50 start-50 translate-middle">
+            <span class="circle"></span>
+            <i class="bi bi-play-fill"></i>
+          </div>
+        </div>
+
+        <iframe id="videoIframe" width="1280" height="720"
+                src="https://www.youtube.com/embed/rJtSeMMQY9g"
+                title="YouTube video" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen
+                class="rounded-4" style="display: none;"></iframe>
       </div>
     </div>
 
-    <div class="row mb-5 align-items-center">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">I'M SIPA KIDS</h5>
-        <p>Program tahunan ini mendukung bakat muda di bidang seni pertunjukan dan musik, memperluas area anak yang kreatif dan edukatif.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="SIPA Kids">
+    <div class="delegates-section text-center my-5">
+      <h3 class="fw-bold" style="color: #B8141E;">Delegates</h3>
+
+      <div class="position-relative" style="position: relative; overflow: hidden;">
+
+        <div id="delegatesContainer" class="delegates-wrapper d-flex">
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Denmark</p>
+          </div>
+
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">France</p>
+          </div>
+
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Germany</p>
+          </div>
+
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+          <div class="delegate-item text-center flex-shrink-0 mx-3">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="Delegate" class="img-fluid rounded-4" style="width: 220px; height: 220px; object-fit: cover;">
+            <p class="mt-2 fw-bold" style="font-size: 16px;">Japan</p>
+          </div>
+        </div>
+
+        <button class="arrow-btn right" onclick="scrollRight()">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+        <button class="arrow-btn left" onclick="scrollLeft()">
+          <i class="bi bi-chevron-left"></i>
+        </button>
       </div>
     </div>
+
+
+
 
     <div class="row mb-5 align-items-center flex-md-row-reverse">
       <div class="col-md-6">
@@ -227,6 +369,81 @@
       </div>
       <div class="col-md-6">
         <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Pasaraya SIPA">
+      </div>
+    </div>
+
+    <div class="mb-5 text-center">
+      <h3 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h3>
+      <h5 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h5>
+    </div>
+
+    <div class="row mb-5">
+      <!-- Berita 1 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="position-relative">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
+            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
+          </div>
+          <div class="card-body">
+            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
+            <h6 class="fw-bold">
+              Launching Poster dan Tema Wayang Jogja Night Carnival #9
+            </h6>
+            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita 2 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="position-relative">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
+            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
+          </div>
+          <div class="card-body">
+            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
+            <h6 class="fw-bold">
+              Launching Poster dan Tema Wayang Jogja Night Carnival #9
+            </h6>
+            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita 3 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="position-relative">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
+            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
+          </div>
+          <div class="card-body">
+            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
+            <h6 class="fw-bold">
+              Launching Poster dan Tema Wayang Jogja Night Carnival #9
+            </h6>
+            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita 4 -->
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="position-relative">
+            <img src="{{ asset('images/delegates/delegates 1.png') }}" class="card-img-top rounded-top" alt="Launching Poster">
+            <span class="badge bg-success position-absolute top-0 end-0 m-2">Event</span>
+          </div>
+          <div class="card-body">
+            <small class="text-muted d-block mb-2">Senin, 22 Juli 2024 02:38 WIB</small>
+            <h6 class="fw-bold">
+              Launching Poster dan Tema Wayang Jogja Night Carnival #9
+            </h6>
+            <a href="#" class="text-primary mt-3" style="font-weight: 500; text-decoration: none;">Baca Selengkapnya</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -300,6 +517,31 @@
     index = (index + 1) % slides.length;
     slides[index].classList.remove('d-none'); // Tampilkan gambar berikutnya
   }, 3000);
+
+  function openVideo() {
+  const thumbnail = document.getElementById('thumbnail');
+  const iframe = document.getElementById('videoIframe');
+  const youtubeLink = "https://www.youtube.com/embed/rJtSeMMQY9g?autoplay=1"; // Autoplay enabled
+
+  thumbnail.style.display = 'none';
+  iframe.src = youtubeLink;
+  iframe.style.display = 'block';
+}
+  function scrollLeft() {
+    const container = document.getElementById('delegatesContainer');
+    container.scrollBy({
+      left: -250, // geser ke kiri sekitar 1 gambar
+      behavior: 'smooth'
+    });
+  }
+
+  function scrollRight() {
+    const container = document.getElementById('delegatesContainer');
+    container.scrollBy({
+      left: 250, // geser ke kanan sekitar 1 gambar
+      behavior: 'smooth'
+    });
+  }
 </script>
 </body>
 </html>

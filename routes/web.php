@@ -13,6 +13,9 @@ Route::get('/lineup', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 
 Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru');

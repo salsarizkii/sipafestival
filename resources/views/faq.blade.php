@@ -86,8 +86,7 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link fw-bold" href="/">HOME</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">NEWS</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" href="/aboutus">ABOUT US</a></li>
         <li class="nav-item"><a class="nav-link active fw-bold" href="/faq">FAQ</a></li>
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
       </ul>
@@ -104,7 +103,6 @@
     <nav class="d-flex justify-content-center flex-wrap gap-4 mb-5" style="font-size: 14px; font-weight: bold;">
       <a href="#" style="color: #b21e22; text-decoration: none;">HOME</a>
       <a href="#" style="color: #b21e22; text-decoration: none;">LINEUP</a>
-      <a href="#" style="color: #b21e22; text-decoration: none;">NEWS</a>
       <a href="#" style="color: #b21e22; text-decoration: none;">ABOUT US</a>
       <a href="#" style="color: #b21e22; text-decoration: none;">FAQ</a>
     </nav>
