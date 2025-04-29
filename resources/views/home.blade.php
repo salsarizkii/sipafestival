@@ -40,7 +40,10 @@
     .header-section {
       position: relative;
       overflow: hidden;
+      height: 100vh;
+      color: #F0D97B;
     }
+
     .header-section img.bg {
       position: absolute;
       top: 0;
@@ -49,42 +52,54 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1), rgba(0,0,0,0));
     }
-    
+
     .header-section .container {
-      width: 100%;
-      height: 700px;
-      padding: 0;
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      max-width: 600px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-    .header-section .container{
-      font-size: 25px;
-      color: #B8141E; 
-    }
+
     .header-section img.text {
-      width: 100%;
-      height: 100%;
-      top: 50px;
-      left: 0;
-      position:relative;
+      width: 130%;
+      height: auto;
     }
+
+    .header-section p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
     .btn-findmore {
-      background-color: transparent; /* transparan */
-      color: #B8141E; /* warna teks merah, bisa disesuaikan */
-      border: 2px solid #B8141E; /* garis pinggir merah */
-      border-radius: 8px; /* sudut membulat */
+      background-color: transparent;
+      color: #F0D97B;
+      border: 2px solid #F0D97B;
+      border-radius: 8px;
       font-size: 15px;
-      padding: 12px 24px;
+      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
       font-weight: bold;
       transition: all 0.3s ease;
-      text-decoration: none; /* hapus underline */
+      text-decoration: none;
       display: inline-block;
+      width: auto; /* pastikan lebarnya menyesuaikan isi */
+      max-width: 200px; /* optional, jika ingin batas maksimal */
+      text-align: center;
     }
+
     .btn-findmore:hover {
-      background-color: #B8141E; /* saat hover, background jadi merah */
-      color: #ffffff;
+      background-color: #F0D97B;
+      color: #000;
     }
+
+
 
     <style>
     .img-slide {
@@ -293,6 +308,10 @@
       font-size: 2rem;
     }
   }
+  .arc-section {
+    padding-top: 70px;
+  }
+  
 </style>
 </head>
 <body>
@@ -319,12 +338,12 @@
 </nav>
 
 <!-- Header -->
-<section class="text-center py-5 header-section">
-  <img src="{{ asset('images/pattern/pattern12.png') }}" alt="Background" class="bg">
+<section class="text-justify py-5 header-section">
+  <img src="{{ asset('images/pattern/org.png') }}" alt="Background" class="bg">
   <div class="container">
-    <img src="{{ asset('images/pattern/sipa2025.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
+    <img src="{{ asset('images/pattern/sipa2025ku.png') }}" alt="SIPA Logo" class="text" style="max-height: 450px;">
     <p class="fw-bold mb-2">4 · 5 · 6 SEPTEMBER 2025</p>
-    <a href="#welcome-section" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND MORE</a>
+    <a href="#welcome-section" class="btn btn-findmore mt-4 fw-bold">FIND MORE</a>
   </div>
 </section>
 
@@ -333,32 +352,33 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-    <h3 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h3>
-    <h3 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h3>
-    <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h4>
+      <h3 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h3>
+      <h3 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h3>
+      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h4>
 
-    <div class="row mb-5 align-items-justify">
-      <div class="col-md-6">
-        <h4 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h4>
-          <p style="text-align: justify;">
-            Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-            Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
-          </p>
-        <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
-      </div>
-      <div class="col-md-6" style="content-align: center;">
-        <div id="slider" class="position-relative overflow-hidden rounded">
-          <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-          <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-          <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-          <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-          <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+      <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+          <h4 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h4>
+            <p style="text-align: justify;">
+                    Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
+                    Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
+            </p>
+          <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 90%;">
+            <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+          </div>
         </div>
       </div>
-    </div>
+
 
     <div class="text-center mb-5">
-      <h3 class="fw-bold" style="color: #B8141E;">On SIPA Last Year</h3>
+      <h3 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h3>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
           <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
@@ -375,8 +395,8 @@
       </div>
     </div>
 
-    <div class="mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">Delegates</h3>
+    <div class="arc-section mb-5 text-center">
+      <h3 class="fw-bold" style="color: #B8141E;">DELEGATES</h3>
     </div>
 
     <div class="delegates-section text-center my-5">
@@ -436,7 +456,7 @@
     </div>
 
     <div class="mb-5 text-center">
-      <h2 class="section-title" style="text-center">ARCHIVE OF SIPA</h2>
+      <h3 class="fw-bold" style="color: #B8141E;">ARCHIVE OF SIPA</h3>
     </div>
 
     <section class="archive-section">
@@ -450,10 +470,10 @@
           <div class="col-md-6">
             <h3 class="text-justify fw-bold" style="color: #B8141E;">Director’s Profile</h3>
               <p class="content-text">
-                Solo International Performing Arts (SIPA) 2024 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. 
-                Digelar di Kota Solo, SIPA 2024 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
-                Dengan mengangkat tema "Performing Royal Genesis" dan menjadikan Gusti Sura sebagai maskot, SIPA 2024 berhasil menyoroti kekayaan budaya Jawa 
-                sekaligus menghadirkan nuansa modern.
+              Irawati Kusumorasri, born in Solo in 1963, directs Solo International Performing Arts (SIPA), a prestigious festival since 2009 that showcases arts from Indonesia and abroad. She’s also a renowned traditional dancer, representing Indonesia globally in cultural missions.
+              <br>
+              <br>
+              Irawati’s achievements include awards from the Ministry of Tourism, the Top 30 Event Calendar accolade, and the first prize from ABBI in 2020. She studied at Sebelas Maret University and ISI Surakarta, excelling in choreographies like “Oncot Srimpi Topeng Sumunar” and founded Semarak Candrakirana Art Center . . .
               </p>
             <a href="#" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
           </div>
@@ -462,7 +482,7 @@
     </section>
 
 
-    <div class="row mb-5 align-items-center">
+    <!-- <div class="row mb-5 align-items-center">
       <div class="col-md-6">
         <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
         <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
@@ -470,9 +490,9 @@
       <div class="col-md-6">
         <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
       </div>
-    </div>
+    </div> -->
 
-    <div class="mb-5 text-center">
+    <div class="arc-section mb-5 text-center">
       <h3 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h3>
       <h5 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h5>
     </div>
