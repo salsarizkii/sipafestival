@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     .navbar-brand img {
       max-height: 65px;
@@ -69,6 +70,32 @@
       font-size: 1rem;
       color: #B8141E;
     }
+    .info-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-card .icon {
+      font-size: 2.5rem;
+    }
+
+    .info-card .label {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 576px) {
+      .info-card .icon {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -95,17 +122,64 @@
 </nav>
 
 
-
+<!-- Festival Info -->
+<section>
+  <div class="container text-center">
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-4">
+        <a href="/" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-house"></i></div>
+            <div class="label">HOME</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/lineup" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-music"></i></div>
+            <div class="label">LINE UP</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/aboutus" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-users"></i></div>
+            <div class="label">ABOUT US</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/faq" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-question-circle"></i></div>
+            <div class="label">FAQ</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/login" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-lock"></i></div>
+            <div class="label">ADMIN</div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="/ticket" class="text-decoration-none text-dark">
+          <div class="card info-card p-4 bg-white rounded">
+            <div class="icon"><i class="fas fa-ticket-alt"></i></div>
+            <div class="label">TICKET</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 <footer style="background: linear-gradient(to bottom,rgb(255, 255, 255), #f8d98d); font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
   <div class="container">
 
-    <!-- Navigasi Menu (tengah atas) -->
-    <nav class="d-flex justify-content-center flex-wrap gap-4 mb-5" style="font-size: 14px; font-weight: bold;">
-      <a href="#" style="color: #b21e22; text-decoration: none;">HOME</a>
-      <a href="#" style="color: #b21e22; text-decoration: none;">LINEUP</a>
-      <a href="#" style="color: #b21e22; text-decoration: none;">ABOUT US</a>
-      <a href="#" style="color: #b21e22; text-decoration: none;">FAQ</a>
-    </nav>
 
     <!-- Tiga Kolom: Kiri - Tengah - Kanan -->
     <div class="row text-center text-md-start align-items-center">
