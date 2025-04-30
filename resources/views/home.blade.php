@@ -604,21 +604,22 @@
         <p>Jl. Kedasih No.22,<br>Kerten, Laweyan, Solo, Central Java, INA</p>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
           <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
-          <form>
+          <form action="{{ route('data.store') }}" method="POST">
+            @csrf
             <div class="mb-3">
-              <input type="email" class="form-control border-danger" placeholder="Email">
+              <input name="email" type="email" class="form-control border-danger" placeholder="Email">
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control border-danger" placeholder="Name">
+              <input name="name" type="text" class="form-control border-danger" placeholder="Name">
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control border-danger" placeholder="Subject">
+              <input name="subject" type="text" class="form-control border-danger" placeholder="Subject">
             </div>
             <div class="mb-3">
-              <textarea class="form-control border-danger" rows="4" placeholder="Message"></textarea>
+              <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-danger btn-sm px-4 rounded-pill">SEND THE FORM</button>

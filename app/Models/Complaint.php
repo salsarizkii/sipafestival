@@ -9,4 +9,11 @@ class Complaint extends Model
 {
     /** @use HasFactory<\Database\Factories\ComplaintFactory> */
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'email',
+        'subject',
+        'message',
+        'status'
+    ];
 }
