@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Custom Style -->
   <style>
     body {
@@ -29,15 +29,27 @@
 </head>
 
 <body>
+  <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <ul class="navbar-nav flex-row d-md-none">
+      <li class="nav-item text-nowrap">
+        <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+      </li>
+    </ul>
+  </header>
+
+
   <div class="d-flex align-items-start">
     
-    <!-- Toggle button for mobile -->
+    {{-- <!-- Toggle button for mobile -->
     <button class="btn d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
       ☰
-    </button>
+    </button> --}}
+
 
     <!-- Sidebar -->
-    <div class="offcanvas-md offcanvas-start d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;" id="mobileSidebar" tabindex="-1" aria-labelledby="mobileSidebarLabel">
+    <div class="offcanvas-md offcanvas-start d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;" id="sidebarMenu" tabindex="-1" aria-labelledby="mobileSidebarLabel">
       
       <!-- Offcanvas Header (Mobile Only) -->
       <div class="offcanvas-header d-md-none">
@@ -46,7 +58,7 @@
       </div>
 
       <!-- Logo -->
-      <a href="/" class="justify-content-center d-none d-md-block">
+      <a href="/" class="justify-content-center d-md-block">
         <img src="/images/logosipafestival2025.png" alt="sipafestival2025" width="100" height="75" class="mx-5" />
       </a>
       <hr />
