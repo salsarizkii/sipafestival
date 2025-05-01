@@ -96,6 +96,12 @@
         font-size: 2rem;
       }
     }
+    body {
+      background-image: url('{{ asset('images/pattern/pattern12.png') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    }
   </style>
 </head>
 <body>

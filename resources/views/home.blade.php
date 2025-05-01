@@ -99,6 +99,27 @@
       color: #000;
     }
 
+    .btn-findmore2 {
+      background-color: transparent;
+      color: #B8141E;
+      border: 2px solid #B8141E;
+      border-radius: 8px;
+      font-size: 15px;
+      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      width: auto; /* pastikan lebarnya menyesuaikan isi */
+      max-width: 200px; /* optional, jika ingin batas maksimal */
+      text-align: center;
+    }
+
+    .btn-findmore2:hover {
+      background-color: #B8141E;
+      color: #ffffff;
+    }
+
 
 
     <style>
@@ -228,9 +249,9 @@
       color: #B8141E;
     }
     .archive-section {
+      padding: 40px 0;
       text-align: justify;
     }
-
     .section-title {
       color: #991B1B; /* merah tua */
       font-weight: bold;
@@ -239,21 +260,24 @@
     }
 
     .content-box {
-      background-color: #FFF7D1; /* krem muda */
+      background-color: rgb(255, 252, 231); /* krem muda */
       border: 2px solid #B8141E;
-      border-radius: 40px;
+      border-radius: 150px 50px 150px 50px;
       padding: 40px;
       max-width: 1200px;
       margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Tambahan ini */
     }
+
 
     .image-container {
       width: 100%;
       max-width: 400px;
       height: 300px;
       overflow: hidden;
-      border-radius: 50px;
+      border-radius: 60px; /* Lebih bulat */
     }
+
 
     .responsive-image {
       width: 100%;
@@ -280,37 +304,44 @@
       width: 100%;
       height: 250px;
       border: 0;
-      border-radius: 0.5rem; /* Rounded corner seperti Bootstrap rounded */
+      border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
     }
     .info-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  .info-card .icon {
-    font-size: 2.5rem;
-  }
-
-  .info-card .label {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 576px) {
-    .info-card .icon {
-      font-size: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px oklab(lightness a b);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-  }
-  .arc-section {
-    padding-top: 70px;
-  }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-card .icon {
+      font-size: 2.5rem;
+      color: #B8141E;
+    }
+
+    .info-card .label {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 576px) {
+      .info-card .icon {
+        font-size: 2rem;
+      }
+    }         
+    .arc-section {
+      padding-top: 70px;
+    }
+    body {
+      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    }
   
 </style>
 </head>
@@ -363,7 +394,7 @@
                     Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
                     Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
             </p>
-          <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+          <a href="/aboutus" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 90%;">
@@ -381,7 +412,7 @@
       <h3 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h3>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
+          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
           <div class="play-button position-absolute top-50 start-50 translate-middle">
             <span class="circle"></span>
             <i class="bi bi-play-fill"></i>
@@ -391,7 +422,7 @@
                 src="https://www.youtube.com/embed/rJtSeMMQY9g"
                 title="YouTube video" frameborder="0"
                 allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-4" style="display: none;"></iframe>
+                class="rounded-5" style="display: none;"></iframe>
       </div>
     </div>
 
@@ -475,7 +506,7 @@
               <br>
               Irawati’s achievements include awards from the Ministry of Tourism, the Top 30 Event Calendar accolade, and the first prize from ABBI in 2020. She studied at Sebelas Maret University and ISI Surakarta, excelling in choreographies like “Oncot Srimpi Topeng Sumunar” and founded Semarak Candrakirana Art Center . . .
               </p>
-            <a href="#" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
+            <a href="#" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
           </div>
         </div>
       </div>
