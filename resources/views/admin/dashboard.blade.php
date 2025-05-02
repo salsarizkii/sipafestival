@@ -127,14 +127,17 @@
             <thead>
               <tr>
                 <th scope="col" width="10%">No</th>
-                <th scope="col" width="70%" class="text-left">Judul Aduan</th>
+                <th scope="col" width="70%" class="text-left">Aduan</th>
                 <th scope="col" width="20%">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
+                <td>
+                  <p><strong>{{ $complaint['name'] }}</strong></p>
+                  <p></p>
+                </td>
                 <td>Otto</td>
               </tr>
               <tr>

@@ -22,7 +22,7 @@ class ComplaintController extends Controller
         DB::beginTransaction();
         try {
             // Save complaint data
-            Complaint::create([
+            $complaint = Complaint::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'subject' => $request->subject,
