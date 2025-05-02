@@ -22,7 +22,7 @@ class ComplaintController extends Controller
         DB::beginTransaction();
         try {
             // Save complaint data
-            $complaint = Complaint::create([
+            Complaint::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'subject' => $request->subject,
@@ -36,5 +36,11 @@ class ComplaintController extends Controller
             DB::rollBack();
             return back()->with('error', 'Gagal mengirim keluhan: ' . $e->getMessage());
         }
+    }
+
+    public function showComplaint()
+    {
+        $complaints = Complaint::all();
+        return view('admin/dashboard', compact('complaints'));
     }
 }

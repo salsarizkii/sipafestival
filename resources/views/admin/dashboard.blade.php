@@ -126,30 +126,22 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col" width="10%">No</th>
+                <th scope="col" width="5%">No</th>
                 <th scope="col" width="70%" class="text-left">Aduan</th>
                 <th scope="col" width="20%">Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>
-                  <p><strong>{{ $complaint['name'] }}</strong></p>
-                  <p></p>
-                </td>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>John</td>
-                <td>Doe</td>
-              </tr>
+              @foreach($complaints as $index => $complaint)
+                <tr>
+                  <th >{{ $index + 1 }}</th>
+                  <td>
+                    <p class="border my-0" ><strong>{{ $complaint->name }}</strong></p>
+                    <p>{{ $complaint->message }}</p>
+                  </td>
+                  <td>{{ $complaint->status }}</td>
+                </tr>
+                @endforeach
             </tbody>
           </table>
         </div>
