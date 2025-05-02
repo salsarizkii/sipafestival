@@ -262,7 +262,7 @@
     .content-box {
       background-color: rgb(255, 252, 231); /* krem muda */
       border: 2px solid #B8141E;
-      border-radius: 150px 50px 150px 50px;
+      border-radius: 40px 130px 40px 130px;
       padding: 40px;
       max-width: 1200px;
       margin: 0 auto;
@@ -271,11 +271,11 @@
 
 
     .image-container {
-      width: 100%;
+      width: 400px;
       max-width: 400px;
-      height: 300px;
+      height: 500px;
       overflow: hidden;
-      border-radius: 60px; /* Lebih bulat */
+      border-radius: 20px 100px 20px 100px;
     }
 
 
@@ -398,11 +398,11 @@
         </div>
         <div class="col-md-6 d-flex justify-content-center">
           <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 90%;">
-            <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+            <img src="{{ asset('images/sliderwelcome/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/sliderwelcome/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/sliderwelcome/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/sliderwelcome/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/sliderwelcome/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
           </div>
         </div>
       </div>
@@ -495,7 +495,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 d-flex justify-content-center">
             <div class="image-container">
-              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="SIPA Performance" class="responsive-image">
+              <img src="{{ asset('images/bundaira/BundaIRA.png') }}" alt="SIPA Performance" class="responsive-image">
             </div>
           </div>
           <div class="col-md-6">
@@ -511,17 +511,6 @@
         </div>
       </div>
     </section>
-
-
-    <!-- <div class="row mb-5 align-items-center">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
-        <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
-      </div>
-    </div> -->
 
     <div class="arc-section mb-5 text-center">
       <h3 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h3>
@@ -659,6 +648,17 @@
       </div>
     </div>
   </div>
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
+      <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
+    </div>
+  </div>
+
+  
 
 </section>
 
@@ -735,11 +735,11 @@
       <div class="col-md-4 mb-4 mb-md-0 text-center">
         <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
         <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+          <a href="https://www.instagram.com/sipafestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
             <i class="bi bi-instagram"></i>
           </a>
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-twitter"></i>
+          <a href="https://youtube.com/@sipafestival?feature=shared" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+            <i class="bi bi-youtube"></i>
           </a>
         </div>
       </div>
@@ -747,7 +747,7 @@
       <!-- Kanan: Site by dan copyright -->
       <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
         <small style="color: #b21e22;">SITE BY</small><br>
-        <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
+        <a href="https://www.instagram.com/sipacommunity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-findmore2 btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold;">SIPA COMMUNITY</a>
         <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
       </div>
     </div>
