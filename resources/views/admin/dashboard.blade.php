@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="content flex-grow-1">
-  <h1 class="m-5 text-5xl text-black fw-bold">Hi, Helmi Rafik!</h1>
   <div class="card m-3 rounded-4 bg-white border-white shadow">
       <div class="card-header d-flex rounded-4 bg-white border-white justify-content-between align-items-center">
           <span>DAFTAR ADUAN</span>
@@ -40,5 +38,5 @@
           </table>
       </div>
   </div>
-</div>
+
 @endsection

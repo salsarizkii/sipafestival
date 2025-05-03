@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('subject');
             $table->text('message');
             $table->string('status');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('response_at')->useCurrent()->nullable()->default(null);
+            $table->string('response_subject')->nullable();
+            $table->string('response_message')->nullable();
+            $table->string('response_by')->nullable();
         });
     }
 

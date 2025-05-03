@@ -50,11 +50,16 @@
         </ul>
     </header>
 
+
     <div class="d-flex align-items-start">
         @include('admin.component.sidebar')
+        
+        <div class="content flex-grow-1">
+            <h1 class="m-5 text-5xl text-black fw-bold">Hi, Helmi Rafik!</h1>
 
-        <!-- Main Content -->
-        @yield('content')
+            <!-- Main Content -->
+            @yield('content')
+        </div>
 
     </div>
 
