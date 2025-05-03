@@ -120,8 +120,6 @@
       color: #ffffff;
     }
 
-
-
     <style>
     .img-slide {
       position: absolute;
