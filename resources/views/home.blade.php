@@ -607,7 +607,7 @@
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
           <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
-          <form action="{{ route('data.store') }}" method="POST">
+          <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
               <input name="email" type="email" class="form-control border-danger" placeholder="Email">
@@ -622,7 +622,7 @@
               <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-danger btn-sm px-4 rounded-pill">SEND THE FORM</button>
+              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill">SEND THE FORM</button>
             </div>
           </form>
         </div>

@@ -10,28 +10,34 @@ class ComplaintController extends Controller
 {
     public function store(Request $request)
     {
-        // Validate input
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'subject' => 'required|string',
-            'message' => 'required|string',
-            'status' => 'string'
-        ]);
-
-        DB::beginTransaction();
         try {
+            // Validate input
+            $validated = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'subject' => 'required|string',
+                'message' => 'required|string',
+                // 'status' => 'string'
+            ]);
+
+            // dd($validated);
+
+            DB::beginTransaction();
             // Save complaint data
-            Complaint::create([
+            $complaint = Complaint::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'subject' => $request->subject,
                 'message' => $request->message,
                 'status' => 'belum dibalas',
+                'sent_at' => now(),
             ]);
 
             DB::commit();
-            return redirect()->route('data.store')->with('success', 'Order berhasil disimpan!');
+            // Send email logic here
+            // Mail::to($request->email)->send(new EmailReply($request->name, $request->subject, $request->message));
+            // You can also use the following line to send an email
+            return redirect('/')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->with('error', 'Gagal mengirim keluhan: ' . $e->getMessage());

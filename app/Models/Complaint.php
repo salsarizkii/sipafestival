@@ -17,6 +17,7 @@ class Complaint extends Model
         'status',
         'response_subject',
         'response_message',
-        'response_by'
+        'response_by',
+        'sent_at',
     ];
 }

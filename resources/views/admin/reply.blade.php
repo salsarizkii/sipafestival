@@ -14,15 +14,16 @@
         </div>
     
         <!-- Form Balasan -->
-        <form>
+        <form action="{{ route('admin.ReplyEmail', $complaint->id) }}" method="POST">
+          @csrf
           <div class="mb-3">
             <label for="subject" class="form-label">Subject Email</label>
-            <input type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
+            <input name="response_subject" type="text" class="form-control" id="subject" placeholder="Masukkan subjek balasan">
           </div>
     
           <div class="mb-3">
             <label for="message" class="form-label">Isi Pesan</label>
-            <textarea class="form-control" id="message" rows="6" placeholder="Tulis isi pesan balasan di sini..."></textarea>
+            <textarea name="response_message" class="form-control" id="message" rows="6" placeholder="Tulis isi pesan balasan di sini..."></textarea>
           </div>
     
           <button type="submit" class="btn btn-primary">Kirim Balasan</button>
