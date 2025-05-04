@@ -34,7 +34,7 @@ Route::get('/admin/dashboard', [ComplaintController::class, 'store'])->name('adm
 Route::get('/admin/dashboard', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
 
 
-Route::post('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
 Route::get('/admin/dashboard/reply', function () {
     return view('admin.reply');
 });

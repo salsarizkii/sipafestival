@@ -3,22 +3,14 @@
 @section('content')
 <div class="card m-3 rounded-4 bg-white border-white shadow">
     <div class="container bg-white p-5 rounded shadow-sm">
-        <h4 class="mb-4">Balas Email</h4>
+        <h4 class="mb-4">Aduan yang diterima</h4>
     
         <!-- Informasi Email yang Diterima -->
         <div class="mb-4">
-          <h6>Informasi Pesan Diterima:</h6>
-          <dt class="col-sm-3">Alamat Email Penerima</dt>
-          <dd class="col-sm-9">penerima@example.com</dd>
-    
-          <dt class="col-sm-3">Nama Penerima</dt>
-          <dd class="col-sm-9">Budi Santoso</dd>
-    
-          <dt class="col-sm-3">Subjek Pesan yang Diterima</dt>
-          <dd class="col-sm-9">Permintaan Informasi Produk</dd>
-    
-          <dt class="col-sm-3">Isi Pesan yang Diterima</dt>
-          <dd class="col-sm-9">Halo, saya ingin mengetahui lebih lanjut tentang produk terbaru Anda. Mohon informasinya. Terima kasih.</dd>
+          <dt class="col-sm-3">{{ $complaint->name }}</dt>
+          <dd class="col-sm-9">{{ $complaint->email }}</dd>
+          <dd class="col-sm-9">{{ $complaint->subject }}</dd>
+          <dd class="col-sm-9">{{ $complaint->message }}</dd>
         </div>
     
         <!-- Form Balasan -->

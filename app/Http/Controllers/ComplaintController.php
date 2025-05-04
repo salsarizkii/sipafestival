@@ -43,4 +43,17 @@ class ComplaintController extends Controller
         $complaints = Complaint::all();
         return view('admin/dashboard', compact('complaints'));
     }
+
+    public function sendEmail(Request $request, $id)
+    {
+        $complaint = Complaint::findOrFail($id);
+        $name = $complaint->name;
+        $subject = $complaint->subject;
+        $message = $complaint->message;
+
+        // Send email logic here
+        // Mail::to($complaint->email)->send(new EmailReply($name, $subject, $message));
+
+        return view('admin.reply', compact('complaint'));
+    }
 }

@@ -27,7 +27,7 @@
                           <td>
                               <p class="my-0"><strong>{{ $complaint->name }}</strong></p>
                               <p class="my-0">{{ $complaint->message }}</p>
-                              <a href="#"
+                              <a href="{{ route('admin.dashboard.sendEmail', $complaint->id) }}"
                                   class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-secondary"
                                   style="font-size: 0.75rem;"> balas</a>
                           </td>
