@@ -10,28 +10,31 @@ class ComplaintController extends Controller
 {
     public function store(Request $request)
     {
-        // Validate input
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'subject' => 'required|string',
-            'message' => 'required|string',
-            'status' => 'string'
-        ]);
-
-        DB::beginTransaction();
         try {
+            // Validate input
+            $validated = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'subject' => 'required|string',
+                'message' => 'required|string',
+                // 'status' => 'string'
+            ]);
+
+            // dd($validated);
+
+            DB::beginTransaction();
             // Save complaint data
-            Complaint::create([
+            $complaint = Complaint::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'subject' => $request->subject,
                 'message' => $request->message,
                 'status' => 'belum dibalas',
+                'sent_at' => now(),
             ]);
 
             DB::commit();
-            return redirect()->route('data.store')->with('success', 'Order berhasil disimpan!');
+            return redirect('/')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->with('error', 'Gagal mengirim keluhan: ' . $e->getMessage());
@@ -42,5 +45,18 @@ class ComplaintController extends Controller
     {
         $complaints = Complaint::all();
         return view('admin/dashboard', compact('complaints'));
+    }
+
+    public function sendEmail(Request $request, $id)
+    {
+        $complaint = Complaint::findOrFail($id);
+        $name = $complaint->name;
+        $subject = $complaint->subject;
+        $message = $complaint->message;
+
+        // Send email logic here
+        // Mail::to($complaint->email)->send(new EmailReply($name, $subject, $message));
+
+        return view('admin.reply', compact('complaint'));
     }
 }

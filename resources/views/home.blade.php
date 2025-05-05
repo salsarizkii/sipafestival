@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     .navbar-brand img {
       max-height: 65px;
@@ -607,7 +608,7 @@
       <div class="col-md-6" id="submission">
         <div class="p-4 rounded border shadow-sm">
           <h6 class="text-danger fw-bold text-center mb-4">SUBMISSION VOLUNTEER FORM</h6>
-          <form action="{{ route('data.store') }}" method="POST">
+          <form action="{{ route('data.store') }}" method="POST" id="submissionForm">
             @csrf
             <div class="mb-3">
               <input name="email" type="email" class="form-control border-danger" placeholder="Email">
@@ -622,7 +623,7 @@
               <textarea name="message" class="form-control border-danger" rows="4" placeholder="Message"></textarea>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-danger btn-sm px-4 rounded-pill">SEND THE FORM</button>
+              <button type="submit" form="submissionForm" class="btn btn-danger btn-sm px-4 rounded-pill" id="submitBtn">SEND THE FORM</button>
             </div>
           </form>
         </div>
@@ -785,6 +786,51 @@
 
     container.style.transform = `translateX(${currentPosition}px)`;
   }, 3000); // 3000 ms = 3 detik
+
+
+  // AJAX untuk mengirim form
+  $(document).ready(function () {
+    $('#submissionForm').submit(function (e) {
+      e.preventDefault(); // mencegah reload halaman
+
+      const form = $(this);
+      const url = form.attr('action');
+      const formData = form.serialize();
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        success: function (response) {
+          // Tampilkan notifikasi sukses
+          Swal.fire({
+            toast: true,
+            icon: 'success',
+            title: 'Form berhasil dikirim!',
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+          });
+
+          form[0].reset(); // reset form jika perlu
+        },
+        error: function (xhr, status, error) {
+          Swal.fire({
+            toast: true,
+            icon: 'error',
+            title: 'Gagal mengirim form!',
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+          });
+
+          console.log(xhr.responseText);
+        }
+      });
+    });
+  });
 
 </script>
 </body>

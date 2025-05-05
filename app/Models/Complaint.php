@@ -14,6 +14,10 @@ class Complaint extends Model
         'email',
         'subject',
         'message',
-        'status'
+        'status',
+        'response_subject',
+        'response_message',
+        'response_by',
+        'sent_at',
     ];
 }

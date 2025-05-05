@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="content flex-grow-1">
-  <h1 class="m-5 text-5xl text-black fw-bold">Hi, Helmi Rafik!</h1>
   <div class="card m-3 rounded-4 bg-white border-white shadow">
       <div class="card-header d-flex rounded-4 bg-white border-white justify-content-between align-items-center">
           <span>DAFTAR ADUAN</span>
@@ -29,9 +27,16 @@
                           <td>
                               <p class="my-0"><strong>{{ $complaint->name }}</strong></p>
                               <p class="my-0">{{ $complaint->message }}</p>
-                              <a href="#"
+                              <a href="{{ route('admin.dashboard.sendEmail', $complaint->id) }}"
                                   class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-secondary"
                                   style="font-size: 0.75rem;"> balas</a>
+                                <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->created_at }}</p>
+
+                                @if ($complaint->status === 'sudah dibalas')
+                                    <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->response_subject }}</p>
+                                    <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->response_message }}</p>
+                                @endif
+                                
                           </td>
                           <td>{{ $complaint->status }}</td>
                       </tr>
@@ -40,5 +45,5 @@
           </table>
       </div>
   </div>
-</div>
+
 @endsection

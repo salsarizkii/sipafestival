@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\LoginController;
+use App\Mail\EmailReply;
 use App\Models\Complaint;
 
 Route::get('/', function () {
@@ -20,6 +23,7 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 });
 
+Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
 
 // admin
 
@@ -31,4 +35,17 @@ Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('adm
 Route::get('/admin/dashboard', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
 Route::get('/admin/dashboard', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
 
-Route::post('/', [ComplaintController::class, 'store'])->name('data.store');
+
+Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
+Route::get('/admin/dashboard/reply', function () {
+    return view('admin.reply');
+});
+
+
+Route::get('/testemail', function () {
+    $name = "funny coder";
+    $subject = "Test Email";
+    $message = "This is a test email message.";
+    Mail::to('rezasaputra878@gmail.com')->send(new EmailReply($name, $subject, $message));
+});
