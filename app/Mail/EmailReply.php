@@ -2,8 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Complaint;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -13,14 +13,15 @@ class EmailReply extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public Complaint $complaint;
+
     /**
      * Create a new message instance.
      */
-    public function __construct(public string $name, public string $message)
+    public function __construct(Complaint $complaint)
     {
-        //
+        $this->complaint = $complaint;
     }
-
 
     /**
      * Get the message envelope.
@@ -28,7 +29,7 @@ class EmailReply extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Email Reply',
+            subject: $this->complaint->response_subject
         );
     }
 
@@ -40,17 +41,15 @@ class EmailReply extends Mailable
         return new Content(
             view: 'admin.mail.EmailReply',
             with: [
-                'name' => $this->name,
-                'subject' => $this->subject,
-                'message' => $this->message,
+                'name' => $this->complaint->name,
+                'subject' => $this->complaint->response_subject,
+                'body' => $this->complaint->response_message,
             ],
         );
     }
 
     /**
      * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array
     {

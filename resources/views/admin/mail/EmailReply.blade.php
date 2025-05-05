@@ -1,3 +1,8 @@
- hey {{ (string) $name }},
-the subject of this email is {{ (string) $subject }}.
-your message is {{ $message->body ?? 'No message content available' }}.
+<p>Dear {{ $name }},</p>
+
+<p><strong>{{ $subject }}</strong></p>
+
+<p>{{ $body }}</p>
+
+<p>Salam hormat,<br>Tim Layanan</p>
+<p><strong>SIPA</strong></p>

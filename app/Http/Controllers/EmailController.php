@@ -29,7 +29,7 @@ class EmailController extends Controller
             ]);
             $complaint->save();
             DB::commit();
-            Mail::to($complaint->email)->send(new EmailReply($complaint->name, $complaint->response_subject, $complaint->response_message));
+            Mail::to($complaint->email)->send(new EmailReply($complaint));
             return redirect()->route('admin.ReplyEmail')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();

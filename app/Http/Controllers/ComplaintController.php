@@ -34,9 +34,6 @@ class ComplaintController extends Controller
             ]);
 
             DB::commit();
-            // Send email logic here
-            // Mail::to($request->email)->send(new EmailReply($request->name, $request->subject, $request->message));
-            // You can also use the following line to send an email
             return redirect('/')->with('success', 'Order berhasil disimpan!');
         } catch (\Exception $e) {
             DB::rollBack();

@@ -30,6 +30,13 @@
                               <a href="{{ route('admin.dashboard.sendEmail', $complaint->id) }}"
                                   class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-secondary"
                                   style="font-size: 0.75rem;"> balas</a>
+                                <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->created_at }}</p>
+
+                                @if ($complaint->status === 'sudah dibalas')
+                                    <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->response_subject }}</p>
+                                    <p class="my-0 text-muted" style="font-size: 0.75rem;">{{ $complaint->response_message }}</p>
+                                @endif
+                                
                           </td>
                           <td>{{ $complaint->status }}</td>
                       </tr>
