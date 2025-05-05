@@ -100,7 +100,26 @@
       color: #000;
     }
 
+    .btn-findmore2 {
+      background-color: transparent;
+      color: #B8141E;
+      border: 2px solid #B8141E;
+      border-radius: 8px;
+      font-size: 15px;
+      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      width: auto; /* pastikan lebarnya menyesuaikan isi */
+      max-width: 200px; /* optional, jika ingin batas maksimal */
+      text-align: center;
+    }
 
+    .btn-findmore2:hover {
+      background-color: #B8141E;
+      color: #ffffff;
+    }
 
     <style>
     .img-slide {
@@ -120,14 +139,14 @@
       z-index: 1;
     }
     #slider {
-      width: 70%;
-      max-width: 600px;
-      height: 400px;
+      width: 90%;
+      max-width: 700px;
+      height: 500px;
       position: relative;
       overflow: hidden;
     }
     .welcome-container {
-      padding-top: 80px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
+      padding-top: 100px; /* bisa kamu ubah sesuka hati, misal 100px, 150px */
     }
     .play-button {
       width: 100px;
@@ -229,9 +248,9 @@
       color: #B8141E;
     }
     .archive-section {
+      padding: 40px 0;
       text-align: justify;
     }
-
     .section-title {
       color: #991B1B; /* merah tua */
       font-weight: bold;
@@ -240,21 +259,24 @@
     }
 
     .content-box {
-      background-color: #FFF7D1; /* krem muda */
+      background-color: rgb(255, 252, 231); /* krem muda */
       border: 2px solid #B8141E;
-      border-radius: 40px;
+      border-radius: 40px 130px 40px 130px;
       padding: 40px;
       max-width: 1200px;
       margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Tambahan ini */
     }
 
+
     .image-container {
-      width: 100%;
-      max-width: 400px;
-      height: 300px;
+      width: 500px;
+      max-width: 550px;
+      height: 500px;
       overflow: hidden;
-      border-radius: 50px;
+      border-radius: 20px 100px 20px 100px;
     }
+
 
     .responsive-image {
       width: 100%;
@@ -267,6 +289,7 @@
       text-align: justify;
       font-size: 16px;
       margin-top: 20px;
+      margin-right: 20px;
     }
 
     @media (max-width: 768px) {
@@ -281,37 +304,47 @@
       width: 100%;
       height: 250px;
       border: 0;
-      border-radius: 0.5rem; /* Rounded corner seperti Bootstrap rounded */
+      border-radius: 1rem; /* Rounded corner seperti Bootstrap rounded */
     }
     .info-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-
-  .info-card .icon {
-    font-size: 2.5rem;
-  }
-
-  .info-card .label {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 576px) {
-    .info-card .icon {
-      font-size: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px oklab(lightness a b);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-  }
-  .arc-section {
-    padding-top: 70px;
-  }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-card .icon {
+      font-size: 2.5rem;
+      color: #B8141E;
+    }
+
+    .info-card .label {
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 576px) {
+      .info-card .icon {
+        font-size: 2rem;
+      }
+    }         
+    .arc-section {
+      padding-top: 70px;
+    }
+    body {
+      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    }
+    .welcome-section p {
+      font-size: 1.3rem;
+    }
   
 </style>
 </head>
@@ -353,36 +386,36 @@
 <!-- SIPA Experience -->
 <section class="py-5 welcome-section" id="welcome-section">
   <div class="container welcome-container" id="welcome-section">
-      <h3 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h3>
-      <h3 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h3>
-      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h4>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">WELCOME TO SIPA!</h1>
+      <h1 class="text-center fw-bold" style="color: #B8141E;">PERFORMING ROYAL GENESIS</h1>
+      <h2 class="text-center fw-medium mb-5" style="color: #B8141E;">Let’s make new journey on SIPA</h2>
 
       <div class="row mb-5 align-items-center">
         <div class="col-md-6">
-          <h4 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h4>
+          <h2 class="fw-bold mb-3" style="color: #B8141E;">Who We Are?</h2>
             <p style="text-align: justify;">
                     Solo International Performing Arts (SIPA) 2025 merupakan ajang tahunan yang merayakan keindahan seni pertunjukan dari berbagai belahan dunia. Digelar di Kota Solo, SIPA 2025 menyuguhkan beragam pertunjukan menarik, mulai dari tarian tradisional hingga pertunjukan kontemporer yang inovatif. 
                     Dengan mengangkat tema <strong><em>"Performing Royal Genesis"</em></strong> dan menjadikan Gusti Sura sebagai maskot, SIPA 2025 berhasil menyoroti kekayaan budaya Jawa sekaligus menghadirkan nuansa modern.
             </p>
-          <a href="/aboutus" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
+          <a href="/aboutus" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">FIND OUT MORE</a>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
-          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 90%;">
-            <img src="{{ asset('images/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
-            <img src="{{ asset('images/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
-            <img src="{{ asset('images/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
-            <img src="{{ asset('images/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
-            <img src="{{ asset('images/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
+          <div id="slider" class="position-relative overflow-hidden rounded" style="max-width: 100%;">
+            <img src="{{ asset('images/sliderwelcome/w.slide 1.png') }}" class="img-slide img-fluid w-100 d-block" alt="Slide 1">
+            <img src="{{ asset('images/sliderwelcome/w.slide 2.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 2">
+            <img src="{{ asset('images/sliderwelcome/w.slide 3.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 3">
+            <img src="{{ asset('images/sliderwelcome/w.slide 4.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 4">
+            <img src="{{ asset('images/sliderwelcome/w.slide 5.png') }}" class="img-slide img-fluid w-100 d-none" alt="Slide 5">
           </div>
         </div>
       </div>
 
 
     <div class="text-center mb-5">
-      <h3 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h3>
+      <h2 class="fw-bold" style="color: #B8141E;">ON SIPA LAST YEAR</h2>
       <div class="position-relative d-inline-block mt-4" style="cursor: pointer; max-width: 2560px;">
         <div id="thumbnail" onclick="openVideo()" style="position: relative;">
-          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-4" alt="On SIPA Last Year">
+          <img src="{{ asset('images/Teaser2024.png') }}" class="img-fluid rounded-5" alt="On SIPA Last Year">
           <div class="play-button position-absolute top-50 start-50 translate-middle">
             <span class="circle"></span>
             <i class="bi bi-play-fill"></i>
@@ -392,12 +425,12 @@
                 src="https://www.youtube.com/embed/rJtSeMMQY9g"
                 title="YouTube video" frameborder="0"
                 allow="autoplay; encrypted-media" allowfullscreen
-                class="rounded-4" style="display: none;"></iframe>
+                class="rounded-5" style="display: none;"></iframe>
       </div>
     </div>
 
     <div class="arc-section mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">DELEGATES</h3>
+      <h2 class="fw-bold" style="color: #B8141E;">DELEGATES</h2>
     </div>
 
     <div class="delegates-section text-center my-5">
@@ -457,7 +490,7 @@
     </div>
 
     <div class="mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">ARCHIVE OF SIPA</h3>
+      <h2 class="fw-bold" style="color: #B8141E;">ARCHIVE OF SIPA</h2>
     </div>
 
     <section class="archive-section">
@@ -465,7 +498,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 d-flex justify-content-center">
             <div class="image-container">
-              <img src="{{ asset('images/delegates/delegates 1.png') }}" alt="SIPA Performance" class="responsive-image">
+              <img src="{{ asset('images/bundaira/BundaIRA.png') }}" alt="SIPA Performance" class="responsive-image">
             </div>
           </div>
           <div class="col-md-6">
@@ -476,26 +509,15 @@
               <br>
               Irawati’s achievements include awards from the Ministry of Tourism, the Top 30 Event Calendar accolade, and the first prize from ABBI in 2020. She studied at Sebelas Maret University and ISI Surakarta, excelling in choreographies like “Oncot Srimpi Topeng Sumunar” and founded Semarak Candrakirana Art Center . . .
               </p>
-            <a href="#" class="btn btn-findmore mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
+            <a href="#" class="btn btn-findmore2 mt-4 px-4 py-2 fw-bold">UNCOVER MORE</a>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- <div class="row mb-5 align-items-center">
-      <div class="col-md-6">
-        <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
-        <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
-      </div>
-    </div> -->
-
     <div class="arc-section mb-5 text-center">
-      <h3 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h3>
-      <h5 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h5>
+      <h2 class="fw-bold" style="color: #B8141E;">NEWS SIPA</h2>
+      <h4 class="text-center fw-medium mb-5" style="color: #B8141E;">Update news about SIPA</h4>
     </div>
 
     <div class="row mb-5">
@@ -630,6 +652,17 @@
       </div>
     </div>
   </div>
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <h5 class="text-danger fw-bold">CULTURAL ESCAPE</h5>
+      <p>Nikmati kekayaan budaya lokal melalui program jalan kaki tematik yang membawa pengunjung menjelajahi situs sejarah dan seni tradisional sekitar.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Cultural Escape">
+    </div>
+  </div>
+
+  
 
 </section>
 
@@ -691,39 +724,11 @@
 
 
 <!-- Footer -->
-<footer style="background: linear-gradient(to bottom,rgb(255, 255, 255), #f8d98d); font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
-  <div class="container">
+<x-footer />
 
-    <!-- Tiga Kolom: Kiri - Tengah - Kanan -->
-    <div class="row text-center text-md-start align-items-center">
 
-      <!-- Kiri: Logo dan Deskripsi -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
-      </div>
 
-      <!-- Tengah: Sosial Media -->
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
-        <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-twitter"></i>
-          </a>
-        </div>
-      </div>
 
-      <!-- Kanan: Site by dan copyright -->
-      <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-        <small style="color: #b21e22;">SITE BY</small><br>
-        <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
-        <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 <script>
   const slides = document.querySelectorAll('.img-slide');
