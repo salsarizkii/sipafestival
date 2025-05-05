@@ -118,10 +118,8 @@
                   </a>
                   <a href="https://youtube.com/@sipafestival?feature=shared" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                     <i class="bi bi-youtube"></i>
-                  </a>
-                  <a href="https://youtube.com/@sipafestival?feature=shared" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-                    <i class="bi bi-tiktok"></i>
-                  </a>                <a href="https://youtube.com/@sipafestival?feature=shared" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                  </a>               
+                  <a href="https://www.facebook.com/profile.php?id=100066607372359" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                     <i class="bi bi-facebook"></i>
                   </a>
                 </div>
