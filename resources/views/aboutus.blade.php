@@ -10,36 +10,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .navbar-brand img {
-      max-height: 65px;
-    }
-    .navbar-custom {
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
-    .navbar-nav .nav-link {
-      color: black !important;
-      font-weight: bold;
-      margin-left: 1.2rem;
-      transition: all 0.3s ease;
-      position: relative;
-      text-transform: uppercase;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #B8141E !important;
-    }
-    .navbar-nav .nav-link.active {
-      color:#B8141E !important;
-    }
-    .navbar-toggler {
-      border: none;
-    }
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    .header-section {
-      position: relative;
-    }
     .header-section img.bg {
       position: absolute;
       top: 0;
@@ -106,29 +76,8 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link fw-bold" href="/">HOME</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/lineup">LINE UP</a></li>
-        <li class="nav-item"><a class="nav-link active fw-bold" href="/aboutus">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<x-header title="Selamat Datang" />
 
-
-<!-- Festival Info -->
 <!-- Festival Info -->
 <section>
   <div class="container text-center">
