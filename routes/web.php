@@ -41,11 +41,3 @@ Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail']
 Route::get('/admin/dashboard/reply', function () {
     return view('admin.reply');
 });
-
-
-Route::get('/testemail', function () {
-    $name = "funny coder";
-    $subject = "Test Email";
-    $message = "This is a test email message.";
-    Mail::to('rezasaputra878@gmail.com')->send(new EmailReply($name, $subject, $message));
-});
