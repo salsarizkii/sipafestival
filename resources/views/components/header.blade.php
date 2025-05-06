@@ -10,15 +10,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     .navbar-brand img {
       max-height: 65px;
     }
     .navbar-custom {
       background: white;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 3px solid #B8141E;
     }
     .navbar-nav .nav-link {
+      font-family: 'Poppins', sans-serif;
       color: black !important;
       font-weight: bold;
       margin-left: 1.2rem;

@@ -53,45 +53,45 @@
     }
 
     .btn-findmore {
-      background-color: transparent;
-      color: #F0D97B;
-      border: 2px solid #F0D97B;
-      border-radius: 8px;
+      background-color: transparent !important;
+      color: #F0D97B !important;
+      border: 2px solid #F0D97B !important;
+      border-radius: 12px !important;
       font-size: 15px;
-      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
+      padding: 10px 20px;
       font-weight: bold;
-      transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      width: auto; /* pastikan lebarnya menyesuaikan isi */
-      max-width: 200px; /* optional, jika ingin batas maksimal */
       text-align: center;
+      width: auto;
+      max-width: 200px;
+      z-index: 10;
+      position: relative;
+      opacity: 1;
     }
 
     .btn-findmore:hover {
-      background-color: #F0D97B;
-      color: #000;
+      background-color: #F0D97B !important;
+      color: #000 !important;
     }
 
     .btn-findmore2 {
-      background-color: transparent;
-      color: #B8141E;
-      border: 2px solid #B8141E;
-      border-radius: 8px;
+      background-color: transparent !important;
+      color: #B8141E !important;
+      border: 2px solid #B8141E !important;
+      border-radius: 12px !important;
       font-size: 15px;
-      padding: 10px 20px; /* cukup, tidak perlu terlalu besar */
+      padding: 10px 20px;
       font-weight: bold;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
-      width: auto; /* pastikan lebarnya menyesuaikan isi */
-      max-width: 200px; /* optional, jika ingin batas maksimal */
       text-align: center;
     }
 
     .btn-findmore2:hover {
-      background-color: #B8141E;
-      color: #ffffff;
+      background-color: #B8141E !important;
+      color: #ffffff !important;
     }
 
     <style>
