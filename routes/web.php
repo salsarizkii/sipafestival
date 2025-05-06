@@ -31,13 +31,28 @@ Route::get('/admin/login', [loginController::class, 'showLoginForm'])->name('log
 Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru');
 Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
-Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/dashboard', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
-Route::get('/admin/dashboard', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
+    Route::get('/admin/dashboard/', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
 
-Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
-Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
-Route::get('/admin/dashboard/reply', function () {
-    return view('admin.reply');
+    Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+    Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
+
+    Route::get('/admin/dashboard/reply', function () {
+        return view('admin.reply');
+    });
 });
+
+
+// Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+// Route::get('/admin/dashboard', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
+// Route::get('/admin/dashboard', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
+
+
+// Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
+// Route::post('/admin/dashboard/{id}/reply', [EmailController::class, 'sendEmail'])->name('admin.ReplyEmail');
+// Route::get('/admin/dashboard/reply', function () {
+//     return view('admin.reply');
+// });

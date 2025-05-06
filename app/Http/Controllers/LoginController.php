@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use Carbon\Carbon;
-
-Carbon::setLocale('id');
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class loginController extends Controller
 {
@@ -20,25 +16,24 @@ class loginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
 
-        // dd(Auth::attempt($credentials));
-        if (Auth::attempt($credentials)) {
-            return redirect('/admin/dashboard'); // Ganti dengan rute yang sesuai
+        if (Auth::attempt($credentials, $request->filled('remember'))) {
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+            'email' => 'Email atau password salah.',
+        ])->withInput();
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/login'); // Ganti dengan rute yang sesuai
+        return redirect()->route('login');
     }
 }

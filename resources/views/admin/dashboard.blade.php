@@ -49,6 +49,10 @@
                             
                                 <!-- Konten balasan -->
                                 <div>
+                                    <p class="my-0"><strong>{{ $complaint->response_name }}</strong></p>
+                                    <p class="my-0 text-muted" style="font-size: 0.75rem;">
+                                        {{ $complaint->updated_at->translatedFormat('d M Y') }}
+                                    </p>
                                     <p class="my-0">{{ $complaint->response_subject }}</p>
                                     <p class="my-0">{{ $complaint->response_message }}</p>
                                 </div>
