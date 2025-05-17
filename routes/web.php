@@ -32,9 +32,9 @@ Route::post('/admin/login', [loginController::class, 'login'])->name('loginbaru'
 Route::post('/admin/logout', [loginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
+    // Route::get('/admin/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
+    Route::post('/admin/dashboard/', [ComplaintController::class, 'store'])->name('admin.dashboard.store');
     Route::get('/admin/dashboard/', [ComplaintController::class, 'showComplaint'])->name('admin.dashboard.showComplaint');
 
     Route::get('/admin/dashboard/{id}/reply', [ComplaintController::class, 'sendEmail'])->name('admin.dashboard.sendEmail');
