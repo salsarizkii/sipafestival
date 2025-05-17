@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
+      background-repeat: repeat;
+      background-size: auto;
+      background-color: white;
+    }
     .header-section img.bg {
       position: absolute;
       top: 0;
@@ -73,7 +82,7 @@
 <x-header title="Selamat Datang" />
 
 <!-- Lineup Section -->
-<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); color: #B8141E; padding: 60px 20px;">
+<section style="color: #B8141E; padding: 60px 20px;">
   <div class="container text-center">
     <h2 class="fw-bold mb-2" style="font-size: 36px;">LINEUP INFORMATION</h2>
     <h5 class="mb-4">AMBASADOR SIPA PERFORMANCE</h5>
@@ -125,7 +134,7 @@
     </div>
     <!-- Indonesian Delegates -->
     <div class="p-4" style="background-color: #ffeab3; border-radius: 40px;">
-      <h4 class="fw-bold mb-4" style="color: #7e001c;">INDONESIAN DELEGATES</h4>
+      <h4 class="fw-bold mb-4" style="color: #B8141E;">INDONESIAN DELEGATES</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100">
@@ -157,98 +166,6 @@
   </div>
 </section>
 
-<!-- Festival Info -->
-<!-- Festival Info -->
-<section>
-  <div class="container text-center">
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4">
-        <a href="/" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-house"></i></div>
-            <div class="label">HOME</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/lineup" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-music"></i></div>
-            <div class="label">LINE UP</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/aboutus" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-users"></i></div>
-            <div class="label">ABOUT US</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/faq" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-question-circle"></i></div>
-            <div class="label">FAQ</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/login" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-lock"></i></div>
-            <div class="label">ADMIN</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/ticket" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-ticket-alt"></i></div>
-            <div class="label">TICKET</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<footer style="background: linear-gradient(to bottom,rgb(255, 255, 255), #f8d98d); font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
-  <div class="container">
-
-    <!-- Tiga Kolom: Kiri - Tengah - Kanan -->
-    <div class="row text-center text-md-start align-items-center">
-
-      <!-- Kiri: Logo dan Deskripsi -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
-      </div>
-
-      <!-- Tengah: Sosial Media -->
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
-        <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-twitter"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Kanan: Site by dan Copyright -->
-      <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-        <small style="color: #b21e22;">SITE BY</small><br>
-        <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
-        <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
-      </div>
-
-    </div>
-  </div>
-</footer>
+<x-footer />
 </body>
 </html>

@@ -16,11 +16,11 @@ Route::get('/', function () {
 Route::get('/lineup', function () {
     return view('lineup');
 });
-Route::get('/faq', function () {
-    return view('faq');
-});
 Route::get('/aboutus', function () {
     return view('aboutus');
+});
+Route::get('/gallery', function () {
+    return view('gallery');
 });
 
 Route::post('/', [ComplaintController::class, 'store'])->name('data.store');

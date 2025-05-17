@@ -62,10 +62,9 @@
         <li class="nav-item"><a class="nav-link fw-bold" href="/admin/login">Login</a></li> -->
 
         <a class="nav-link fw-bold {{ request()->is('/') ? 'active' : '' }}" href="/">HOME</a>
+        <a class="nav-link fw-bold {{ request()->is('gallery') ? 'active' : '' }}" href="/gallery">GALLERY</a>
         <a class="nav-link fw-bold {{ request()->is('lineup') ? 'active' : '' }}" href="/lineup">LINE UP</a>
         <a class="nav-link fw-bold {{ request()->is('aboutus') ? 'active' : '' }}" href="/aboutus">ABOUT US</a>
-        <a class="nav-link fw-bold {{ request()->is('faq') ? 'active' : '' }}" href="/faq">FAQ</a>
-        <a class="nav-link fw-bold {{ request()->is('admin/login') ? 'active' : '' }}" href="/admin/login">Login</a>
       </ul>
     </div>
   </div>

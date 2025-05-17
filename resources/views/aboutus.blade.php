@@ -10,67 +10,62 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .header-section img.bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.4;
-    }
-    .delegates-img {
-      width: 100%;           /* Biar gambar full lebar kolom */
-      height: 100%;          /* Tinggi tetap seragam */
-      object-fit: cover;      /* Gambar crop rapi tanpa gepeng */
-      border-radius: 10px;    /* Biar sudut gambar membulat */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tambah bayangan halus */
-      transition: transform 0.3s ease; /* Smooth hover effect */
-    }
-
-    .delegates-img:hover {
-      transform: scale(1.05); /* Pas hover gambar membesar sedikit */
-    }
-    .card-body {
-      margin-top: 20px; /* jarak antara gambar dan tulisan */
-    }
-
-    .card-title {
-      font-size: 1rem;
-      color: #B8141E;
-    }
-    .info-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .info-card .icon {
-      font-size: 2.5rem;
-    }
-
-    .info-card .label {
-      margin-top: 10px;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 576px) {
-      .info-card .icon {
-        font-size: 2rem;
-      }
+    * {
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      background-image: url('{{ asset('images/pattern/pattern12.png') }}');
+      background-image: url('{{ asset('images/pattern/BGSIPA.png') }}');
       background-repeat: repeat;
       background-size: auto;
       background-color: white;
+    }
+    .archive-section {
+      padding: 40px 0;
+      text-align: justify;
+    }
+    .section-title {
+      color: #991B1B; /* merah tua */
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+    .content-box {
+      background-color: rgb(255, 252, 231); /* krem muda */
+      border: 2px solid #B8141E;
+      border-radius: 40px 130px 40px 130px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Tambahan ini */
+    }
+    .image-container {
+      width: 500px;
+      max-width: 550px;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 20px 100px 20px 100px;
+    }
+    .responsive-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content-text {
+      color: #991B1B;
+      text-align: justify;
+      font-size: 16px;
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+      .image-container {
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
@@ -78,95 +73,32 @@
 
 <x-header title="Selamat Datang" />
 
-<!-- Festival Info -->
-<section>
-  <div class="container text-center">
-    <div class="row g-4">
-      <div class="col-sm-6 col-md-4">
-        <a href="/" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-house"></i></div>
-            <div class="label">HOME</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/lineup" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-music"></i></div>
-            <div class="label">LINE UP</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/aboutus" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-users"></i></div>
-            <div class="label">ABOUT US</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/faq" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-question-circle"></i></div>
-            <div class="label">FAQ</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/login" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-lock"></i></div>
-            <div class="label">ADMIN</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a href="/ticket" class="text-decoration-none text-dark">
-          <div class="card info-card p-4 bg-white rounded">
-            <div class="icon"><i class="fas fa-ticket-alt"></i></div>
-            <div class="label">TICKET</div>
-          </div>
-        </a>
-      </div>
+<section class="py-5 welcome-section" id="welcome-section">
+    <div class="mb-5 text-center">
+      <h2 class="fw-bold" style="color: #B8141E;">ARCHIVE OF SIPA</h2>
     </div>
-  </div>
-</section>
-<footer style="background: linear-gradient(to bottom,rgb(255, 255, 255), #f8d98d); font-family: 'Arial', sans-serif; color: #b21e22; padding: 60px 20px 40px;">
-  <div class="container">
 
-
-    <!-- Tiga Kolom: Kiri - Tengah - Kanan -->
-    <div class="row text-center text-md-start align-items-center">
-
-      <!-- Kiri: Logo dan Deskripsi -->
-      <div class="col-md-4 mb-4 mb-md-0">
-        <img src="{{ asset('images/sipalogo.png') }}" alt="SIPA Logo" style="max-height: 90px;">
-      </div>
-
-      <!-- Tengah: Sosial Media -->
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <div style="font-weight: bold; color: black; font-size: 16px;">Follow Us</div>
-        <div class="d-flex justify-content-center gap-4 mt-2">
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="#" style="background-color: #b21e22; color: white; border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 20px;">
-            <i class="bi bi-twitter"></i>
-          </a>
+    <section class="archive-section">
+      <div class="content-box">
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="image-container">
+              <img src="{{ asset('images/bundaira/BundaIRA.png') }}" alt="SIPA Performance" class="responsive-image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="text-justify fw-bold" style="color: #B8141E;">Director’s Profile</h3>
+              <p class="content-text">
+              Irawati Kusumorasri, born in Solo in 1963, directs Solo International Performing Arts (SIPA), a prestigious festival since 2009 that showcases arts from Indonesia and abroad. She’s also a renowned traditional dancer, representing Indonesia globally in cultural missions.
+              <br>
+              <br>
+              Irawati’s achievements include awards from the Ministry of Tourism, the Top 30 Event Calendar accolade, and the first prize from ABBI in 2020. She studied at Sebelas Maret University and ISI Surakarta, excelling in choreographies like “Oncot Srimpi Topeng Sumunar” and founded Semarak Candrakirana Art Center . . .
+              </p>
+          </div>
         </div>
       </div>
-
-      <!-- Kanan: Site by dan Copyright -->
-      <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-        <small style="color: #b21e22;">SITE BY</small><br>
-        <button class="btn btn-outline-danger btn-sm rounded-pill mt-1 mb-2" style="font-weight: bold; border-color: #b21e22; color: #b21e22;">SIPA COMMUNITY</button>
-        <div style="font-size: 13px;">&copy; 2025 SIPA COMMUNITY GROUP</div>
-      </div>
-
-    </div>
-  </div>
-</footer>
+    </section>
+</section>
+<x-footer />
 </body>
 </html>
