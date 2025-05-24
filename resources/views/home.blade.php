@@ -206,6 +206,12 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       cursor: pointer;
       z-index: 10;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
     }
 
     .arrow-btn.left {
@@ -214,6 +220,7 @@
 
     .arrow-btn.right {
       right: 10px;
+      padding-left: 12px;
     }
 
     .arrow-btn i {
